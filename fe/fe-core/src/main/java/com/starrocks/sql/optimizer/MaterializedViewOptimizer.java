@@ -50,6 +50,11 @@ public class MaterializedViewOptimizer {
         optimizerConfig.disableRule(RuleType.TF_PRUNE_EMPTY_SCAN);
         optimizerConfig.disableRule(RuleType.TF_MV_TEXT_MATCH_REWRITE_RULE);
         optimizerConfig.disableRule(RuleType.TF_MV_TRANSPARENT_REWRITE_RULE);
+<<<<<<< HEAD
+=======
+        optimizerConfig.disableRule(RuleType.TF_ELIMINATE_AGG);
+        optimizerConfig.disableRule(RuleType.TF_PULL_UP_PREDICATE_SCAN);
+>>>>>>> e66fcdb8ad ([Enhancement] support common expr reuse strategy on scan predicates (#52889))
         // For sync mv, no rewrite query by original sync mv rule to avoid useless rewrite.
         if (mv.getRefreshScheme().isSync()) {
             optimizerConfig.disableRule(RuleType.TF_MATERIALIZED_VIEW);
